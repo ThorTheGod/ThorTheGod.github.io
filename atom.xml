@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>多洛的黑猫</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-02-13T15:55:14.759Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>thor</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>helloworld</title>
+    <link href="http://yoursite.com/2019/02/13/helloworld/"/>
+    <id>http://yoursite.com/2019/02/13/helloworld/</id>
+    <published>2019-02-13T11:23:22.000Z</published>
+    <updated>2019-02-13T15:55:14.759Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇文章是你好师姐<br>雷猴</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这篇文章是你好师姐&lt;br&gt;雷猴&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
+    
+  </entry>
+  
+</feed>
