@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="node,">
 
 
 
@@ -88,16 +88,21 @@
 
 
 
-<meta name="description" content="有朋自远方来，虽远必诛！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="多洛的黑猫">
-<meta property="og:url" content="http://yoursite.com/archives/2019/02/index.html">
+<meta name="description" content="node.js的三个特点：1.单线程：在java，PHP或net等服务器端语言中会为每一个客户端链接创建见一个新的线程，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node杂笔记">
+<meta property="og:url" content="http://yoursite.com/2019/02/14/node.js学习日志/index.html">
 <meta property="og:site_name" content="多洛的黑猫">
-<meta property="og:description" content="有朋自远方来，虽远必诛！">
+<meta property="og:description" content="node.js的三个特点：1.单线程：在java，PHP或net等服务器端语言中会为每一个客户端链接创建见一个新的线程，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20181014225706504?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2019-02-14T05:45:39.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多洛的黑猫">
-<meta name="twitter:description" content="有朋自远方来，虽远必诛！">
+<meta name="twitter:title" content="node杂笔记">
+<meta name="twitter:description" content="node.js的三个特点：1.单线程：在java，PHP或net等服务器端语言中会为每一个客户端链接创建见一个新的线程，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -127,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/02/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/14/node.js学习日志/">
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
-  <title>归档 | 多洛的黑猫</title>
+  <title>node杂笔记 | 多洛的黑猫</title>
   
 
 
@@ -152,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -287,177 +292,206 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/node.js学习日志/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="thor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="多洛的黑猫">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">node杂笔记</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-updated">
+                &nbsp; | &nbsp; 更新于
+                 <time itemprop="dateUpdated" datetime="2019-02-14T13:45:39+08:00" content="2019-02-14">
+                  2019-02-14
+                </time>
+              </span>
+            
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-14T13:45:22+08:00">
+                2019-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 4 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/14/node.js学习日志/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/14/node.js学习日志/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/14/node.js学习日志/" itemprop="url">
-              
-                <span itemprop="name">node杂笔记</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-14T13:45:22+08:00" content="2019-02-14">
-          02-14
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/14/html，css和js学习重要知识点/" itemprop="url">
-              
-                <span itemprop="name">web前端杂笔</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-14T13:45:22+08:00" content="2019-02-14">
-          02-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/14/Java后端特殊细节记录/" itemprop="url">
-              
-                <span itemprop="name">java笔记综合</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-14T13:02:22+08:00" content="2019-02-14">
-          02-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/13/helloworld/" itemprop="url">
-              
-                <span itemprop="name">helloworld</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-13T19:23:22+08:00" content="2019-02-13">
-          02-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <h2 id="node-js的三个特点："><a href="#node-js的三个特点：" class="headerlink" title="node.js的三个特点："></a>node.js的三个特点：</h2><p>1.单线程：<br>在java，PHP或net等服务器端语言中会<strong>为每一个客户端链接创建见一个新的线程</strong>，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。<br>而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，其他请求放入事件站循环，当当前请求需要数据库时会被放入事件站中，即：<img src="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>i/o读数据库，这个过程中node.js可以处理下一个请求，直到i/o返回值，继续进行前请求。<br>使操作系统完全不再有线程创建·销毁的事件开销<br>能使cpu利用率百分之百<br>一个用户线程的崩溃将导致所有用户线程崩溃。<br>2.非阻塞i/o：<br>传统的线程处理机制中，执行了i/o访问数据库代码后，整个线程都讲停下来等待数据库返回值，随后进行下一步代码。即这种机制下的i/o阻塞了程序的执行。而node.js在执行访问数据库时会立即执行后面的代码<br>如：<br>fs.readfile(“text1”,function(){</p>
+<p>}<br>    a++;<br>其中a++语句不会被访问数据库代码阻塞运行。<br>机制：线程的事件循环不断检查是否有未处理的事件并依次处理。完成事件的调动。<br>3.事件驱动：<br>客户端请求连接，提交数据等行为会触发相应的事件（node中同一时刻一个线程只能执行一个回调函数，中途可以处理其他事件——事件环）<img src="https://img-blog.csdn.net/20181014225706504?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>*node适合有大量并发i/o但响应前不需要复杂计算的程序（擅长i/o即任务调动单不擅长计算）</p>
+<p>node不适合需要极高可靠性的业务。（是一种小工具但不健壮）</p>
+<h2 id="我的第一次node代码"><a href="#我的第一次node代码" class="headerlink" title="我的第一次node代码"></a>我的第一次node代码</h2><pre><code>var http=require(&quot;http&quot;);
+require表示引包，即引用自己的一个特殊功能
 
+var server =  http.createServer(function(req,res){
+创建服务器，参数为回调函数，表示若有请求则执行什么
+res.writeHead(200,{&quot;Content-type&quot;:&quot;text/html;charset=UTF-8&quot;});
+设置http头部，状态码为200，文件类型为html，字符类型为utf-8
+res.end(&quot;ancsjannaalscmafwrf&quot; + (1+2+3) +&quot;s&quot;);
+});
+server.listen(3000,&quot;127.0.0.1&quot;);
+运行服务器，监听3000端口
+</code></pre><p>ctrl+c可以中断挂起服务器<br>终端输入cd:\xxx表示进入某个文件，dir显示文件中的子文件<br>tab自动补全</p>
+<p>node.js没有根目录的概念——没有任何web容器，路由相关。<br>            所以它很难提供静态服务。</p>
+<p>查询字符串的模块：url和querystring</p>
+<p><code>var http=require(&quot;http&quot;);</code><br><code>var url = require(&quot;url&#39;);</code><br>    //url.parse（）可以将一个完整的url地址分开为href协议，slashes斜杠，host主机名，端口号port，路径pathname，path（带上地址后的query），query（用户字符串）<br>    <code>var path = url.parse(req.url).pathname;</code><br>    //路径<br>    <code>var query = url.parse(req.url).query;</code><br>    //var query = url.parse(req.url，true).query;这里的true把长串转换成对象。即把查询遍为对象，直接打点来得到相应的参数。相当于querystring函数。<br>    //var一个age =query.age再console.log便可以把query里的age提取并输出出来<br>    //查询的东西<br>    <code>console.log(path);</code><br>    <code>console.log(&quot;query&quot;+query);</code><br>    <code>querystring.parse（&#39;foo=bar&amp;abc=xyz&amp;abc=123&#39;）</code><br>    //returns<br>   <code>{</code><br>      <code>foo: &#39;bar&#39;,</code><br>    <code>abc: [&#39;xyz&#39;, &#39;123&#39;]</code><br>   <code>}</code><br>    // 假设存在 gbkDecodeURIComponent 函数。<br>    //规定编码方式<br>    <code>querystring.parse(&#39;w=%D6%D0%CE%C4&amp;foo=bar&#39;, null, null,
+                      { decodeURIComponent: gbkDecodeURIComponent });</code></p>
+<p>运行流程：<br>写好html和node.js后，进入cmd，cd打开node.js代码所在的文件夹后，输入node xxx.js运行js文件，即可实现运行。</p>
+<p>WebSocket协议允许了服务器主动发送信息给客户端。<br>用ws模块搭建websocket：</p>
+<pre><code>// 导入WebSocket模块:
+const WebSocket = require(&apos;ws&apos;);
+
+// 引用Server类:
+const WebSocketServer = WebSocket.Server;
+
+// 实例化:
+const wss = new WebSocketServer({
+    port: 3000
+});
+</code></pre>
+      
     </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node/" <i="" class="fa fa-tag"> node</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/14/html，css和js学习重要知识点/" rel="next" title="web前端杂笔">
+                <i class="fa fa-chevron-left"></i> web前端杂笔
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -465,6 +499,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -485,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -591,6 +645,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js的三个特点："><span class="nav-number">1.</span> <span class="nav-text">node.js的三个特点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的第一次node代码"><span class="nav-number">2.</span> <span class="nav-text">我的第一次node代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -746,6 +816,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
