@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -98,7 +90,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20181014225706504?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-02-14T05:45:39.984Z">
+<meta property="og:updated_time" content="2019-02-14T05:59:56.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node杂笔记">
 <meta name="twitter:description" content="node.js的三个特点：1.单线程：在java，PHP或net等服务器端语言中会为每一个客户端链接创建见一个新的线程，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，">
@@ -330,8 +322,8 @@
           <span class="post-time">
             
               <span class="post-updated">
-                &nbsp; | &nbsp; 更新于
-                 <time itemprop="dateUpdated" datetime="2019-02-14T13:45:39+08:00" content="2019-02-14">
+                  |   更新于
+                 <time itemprop="dateUpdated" datetime="2019-02-14T13:59:56+08:00" content="2019-02-14">
                   2019-02-14
                 </time>
               </span>
@@ -391,29 +383,29 @@
       
 
       
-        <h2 id="node-js的三个特点："><a href="#node-js的三个特点：" class="headerlink" title="node.js的三个特点："></a>node.js的三个特点：</h2><p>1.单线程：<br>在java，PHP或net等服务器端语言中会<strong>为每一个客户端链接创建见一个新的线程</strong>，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。<br>而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，其他请求放入事件站循环，当当前请求需要数据库时会被放入事件站中，即：<img src="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>i/o读数据库，这个过程中node.js可以处理下一个请求，直到i/o返回值，继续进行前请求。<br>使操作系统完全不再有线程创建·销毁的事件开销<br>能使cpu利用率百分之百<br>一个用户线程的崩溃将导致所有用户线程崩溃。<br>2.非阻塞i/o：<br>传统的线程处理机制中，执行了i/o访问数据库代码后，整个线程都讲停下来等待数据库返回值，随后进行下一步代码。即这种机制下的i/o阻塞了程序的执行。而node.js在执行访问数据库时会立即执行后面的代码<br>如：<br>fs.readfile(“text1”,function(){</p>
+        <meta name="generator" content="Hexo 3.8.0"><h2 id="node-js的三个特点："><a href="#node-js的三个特点：" class="headerlink" title="node.js的三个特点："></a>node.js的三个特点：</h2><p>1.单线程：<br>在java，PHP或net等服务器端语言中会<strong>为每一个客户端链接创建见一个新的线程</strong>，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。<br>而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，其他请求放入事件站循环，当当前请求需要数据库时会被放入事件站中，即：<img src="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>i/o读数据库，这个过程中node.js可以处理下一个请求，直到i/o返回值，继续进行前请求。<br>使操作系统完全不再有线程创建·销毁的事件开销<br>能使cpu利用率百分之百<br>一个用户线程的崩溃将导致所有用户线程崩溃。<br>2.非阻塞i/o：<br>传统的线程处理机制中，执行了i/o访问数据库代码后，整个线程都讲停下来等待数据库返回值，随后进行下一步代码。即这种机制下的i/o阻塞了程序的执行。而node.js在执行访问数据库时会立即执行后面的代码<br>如：<br>fs.readfile(“text1”,function(){</p>
 <p>}<br>    a++;<br>其中a++语句不会被访问数据库代码阻塞运行。<br>机制：线程的事件循环不断检查是否有未处理的事件并依次处理。完成事件的调动。<br>3.事件驱动：<br>客户端请求连接，提交数据等行为会触发相应的事件（node中同一时刻一个线程只能执行一个回调函数，中途可以处理其他事件——事件环）<img src="https://img-blog.csdn.net/20181014225706504?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>*node适合有大量并发i/o但响应前不需要复杂计算的程序（擅长i/o即任务调动单不擅长计算）</p>
 <p>node不适合需要极高可靠性的业务。（是一种小工具但不健壮）</p>
-<h2 id="我的第一次node代码"><a href="#我的第一次node代码" class="headerlink" title="我的第一次node代码"></a>我的第一次node代码</h2><pre><code>var http=require(&quot;http&quot;);
-require表示引包，即引用自己的一个特殊功能
+<h2 id="我的第一次node代码"><a href="#我的第一次node代码" class="headerlink" title="我的第一次node代码"></a>我的第一次node代码</h2><pre><code>var http=require("http");
+//require表示引包，即引用自己的一个特殊功能
 
 var server =  http.createServer(function(req,res){
-创建服务器，参数为回调函数，表示若有请求则执行什么
-res.writeHead(200,{&quot;Content-type&quot;:&quot;text/html;charset=UTF-8&quot;});
-设置http头部，状态码为200，文件类型为html，字符类型为utf-8
-res.end(&quot;ancsjannaalscmafwrf&quot; + (1+2+3) +&quot;s&quot;);
+//创建服务器，参数为回调函数，表示若有请求则执行什么
+res.writeHead(200,{"Content-type":"text/html;charset=UTF-8"});
+//设置http头部，状态码为200，文件类型为html，字符类型为utf-8
+res.end("ancsjannaalscmafwrf" + (1+2+3) +"s");
 });
-server.listen(3000,&quot;127.0.0.1&quot;);
-运行服务器，监听3000端口
+server.listen(3000,"127.0.0.1");
+//运行服务器，监听3000端口
 </code></pre><p>ctrl+c可以中断挂起服务器<br>终端输入cd:\xxx表示进入某个文件，dir显示文件中的子文件<br>tab自动补全</p>
 <p>node.js没有根目录的概念——没有任何web容器，路由相关。<br>            所以它很难提供静态服务。</p>
 <p>查询字符串的模块：url和querystring</p>
-<p><code>var http=require(&quot;http&quot;);</code><br><code>var url = require(&quot;url&#39;);</code><br>    //url.parse（）可以将一个完整的url地址分开为href协议，slashes斜杠，host主机名，端口号port，路径pathname，path（带上地址后的query），query（用户字符串）<br>    <code>var path = url.parse(req.url).pathname;</code><br>    //路径<br>    <code>var query = url.parse(req.url).query;</code><br>    //var query = url.parse(req.url，true).query;这里的true把长串转换成对象。即把查询遍为对象，直接打点来得到相应的参数。相当于querystring函数。<br>    //var一个age =query.age再console.log便可以把query里的age提取并输出出来<br>    //查询的东西<br>    <code>console.log(path);</code><br>    <code>console.log(&quot;query&quot;+query);</code><br>    <code>querystring.parse（&#39;foo=bar&amp;abc=xyz&amp;abc=123&#39;）</code><br>    //returns<br>   <code>{</code><br>      <code>foo: &#39;bar&#39;,</code><br>    <code>abc: [&#39;xyz&#39;, &#39;123&#39;]</code><br>   <code>}</code><br>    // 假设存在 gbkDecodeURIComponent 函数。<br>    //规定编码方式<br>    <code>querystring.parse(&#39;w=%D6%D0%CE%C4&amp;foo=bar&#39;, null, null,
+<p><code>var http=require("http");</code><br><code>var url = require("url');</code><br>    //url.parse（）可以将一个完整的url地址分开为href协议，slashes斜杠，host主机名，端口号port，路径pathname，path（带上地址后的query），query（用户字符串）<br>    <code>var path = url.parse(req.url).pathname;</code><br>    //路径<br>    <code>var query = url.parse(req.url).query;</code><br>    //var query = url.parse(req.url，true).query;这里的true把长串转换成对象。即把查询遍为对象，直接打点来得到相应的参数。相当于querystring函数。<br>    //var一个age =query.age再console.log便可以把query里的age提取并输出出来<br>    //查询的东西<br>    <code>console.log(path);</code><br>    <code>console.log("query"+query);</code><br>    <code>querystring.parse（'foo=bar&abc=xyz&abc=123'）</code><br>    //returns<br>   <code>{</code><br>      <code>foo: 'bar',</code><br>    <code>abc: ['xyz', '123']</code><br>   <code>}</code><br>    // 假设存在 gbkDecodeURIComponent 函数。<br>    //规定编码方式<br>    <code>querystring.parse('w=%D6%D0%CE%C4&foo=bar', null, null,
                       { decodeURIComponent: gbkDecodeURIComponent });</code></p>
 <p>运行流程：<br>写好html和node.js后，进入cmd，cd打开node.js代码所在的文件夹后，输入node xxx.js运行js文件，即可实现运行。</p>
 <p>WebSocket协议允许了服务器主动发送信息给客户端。<br>用ws模块搭建websocket：</p>
 <pre><code>// 导入WebSocket模块:
-const WebSocket = require(&apos;ws&apos;);
+const WebSocket = require('ws');
 
 // 引用Server类:
 const WebSocketServer = WebSocket.Server;
@@ -676,7 +668,7 @@ const wss = new WebSocketServer({
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">© <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -694,17 +686,45 @@ const wss = new WebSocketServer({
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>--!>
+<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>-->
 
 
 
- <!-- <span class="post-meta-divider">|</span>--!>
+ <!-- <span class="post-meta-divider">|</span>-->
 
 
 
-<!--  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini--!></div>--!>
+  <!--<div class="theme-info">主题 &mdash; --><!--<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini-->
+<span>　<i class="fa fa-bomb"></i></span>
+<span id="showDays"></span></div>
 
 
+
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2019,2,13,13,30,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML="本站已运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }, 1000);
+</script>
 
         
 
@@ -715,8 +735,8 @@ const wss = new WebSocketServer({
 
 
         
-      </div>
-    </footer>
+      </footer></div>
+    
 
     
       <div class="back-to-top">
@@ -727,7 +747,7 @@ const wss = new WebSocketServer({
 
     
 
-  </div>
+  
 
   
 
@@ -1200,6 +1220,6 @@ const wss = new WebSocketServer({
   
 
    <script type="text/javascript" src="/js/src/love.js"></script>
-</body>
-</html>
---></div></footer></div></body></html>
+
+
+--><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>

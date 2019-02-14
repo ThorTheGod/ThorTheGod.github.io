@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -327,7 +319,7 @@
           <span class="post-time">
             
               <span class="post-updated">
-                &nbsp; | &nbsp; 更新于
+                  |   更新于
                  <time itemprop="dateUpdated" datetime="2019-02-14T13:48:13+08:00" content="2019-02-14">
                   2019-02-14
                 </time>
@@ -388,7 +380,7 @@
       
 
       
-        <p>##Java后端特殊细节<br><strong><em>1.</em></strong>java中的实例变量：<strong>**</strong><br><strong>含义</strong>：<br>实例变量：定义在类中但<strong>在任何方法之外</strong>。（New出来的均有初始化）<br><strong>与局部变量的异同：</strong><br>(局部变量：定义在方法之中的变量）</p>
+        <meta name="generator" content="Hexo 3.8.0"><p>##Java后端特殊细节<br><strong><em>1.</em></strong>java中的实例变量：<strong>**</strong><br><strong>含义</strong>：<br>实例变量：定义在类中但<strong>在任何方法之外</strong>。（New出来的均有初始化）<br><strong>与局部变量的异同：</strong><br>(局部变量：定义在方法之中的变量）</p>
 <ol>
 <li><p>局部变量要先赋值，再进行运算，而实例变量均已经赋初值。</p>
 </li>
@@ -399,7 +391,7 @@
 <li><p>实例变量和局部变量都允许命名冲突。<br>代码实例：</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Sample</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">private int a=1; //实例变量</span><br><span class="line"></span><br><span class="line">public void b()</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">int a=2; //局部变量</span><br><span class="line"></span><br><span class="line">System.out.println(&quot;局部变量:a=&quot;+a);</span><br><span class="line"></span><br><span class="line">System.out.println(&quot;实例变量:a=&quot;+this.a);//局部变量的作用域内引用实例变量方法:this.变量名</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void main(String[] args)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">new Sample().b();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Sample</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">private int a=1; //实例变量</span><br><span class="line"></span><br><span class="line">public void b()</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">int a=2; //局部变量</span><br><span class="line"></span><br><span class="line">System.out.println("局部变量:a="+a);</span><br><span class="line"></span><br><span class="line">System.out.println("实例变量:a="+this.a);//局部变量的作用域内引用实例变量方法:this.变量名</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">public static void main(String[] args)</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">new Sample().b();</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p><strong><em>2.构造器：</em></strong><br>构造器就是<strong>和类名相同</strong>但<strong>无返回类型</strong>的方法。创建构造器就是构建特定方法。而构造器最大的用处就是<em>在创建对象时执行初始化</em>。每当创建一个对象时，系统会为这个对象的实例进行默认的初始化。如果想改变这种默认的初始化，就可以通过自定义构造器来实现。<br>比如 </p>
 <pre><code>class A
  {
@@ -449,11 +441,11 @@ name = input;
 } 
 
 Platypus() { 
-this(&quot;John/Mary Doe&quot;); 
+this("John/Mary Doe"); 
 } 
 
 public static void main(String args[]) { 
-Platypus p1 = new Platypus(&quot;digger&quot;); 
+Platypus p1 = new Platypus("digger"); 
 Platypus p2 = new Platypus(); 
 } 
 } 
@@ -693,7 +685,7 @@ Platypus p2 = new Platypus();
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">© <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -711,17 +703,45 @@ Platypus p2 = new Platypus();
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>--!>
+<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>-->
 
 
 
- <!-- <span class="post-meta-divider">|</span>--!>
+ <!-- <span class="post-meta-divider">|</span>-->
 
 
 
-<!--  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini--!></div>--!>
+  <!--<div class="theme-info">主题 &mdash; --><!--<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini-->
+<span>　<i class="fa fa-bomb"></i></span>
+<span id="showDays"></span></div>
 
 
+
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2019,2,13,13,30,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML="本站已运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }, 1000);
+</script>
 
         
 
@@ -732,8 +752,8 @@ Platypus p2 = new Platypus();
 
 
         
-      </div>
-    </footer>
+      </footer></div>
+    
 
     
       <div class="back-to-top">
@@ -744,7 +764,7 @@ Platypus p2 = new Platypus();
 
     
 
-  </div>
+  
 
   
 
@@ -1217,6 +1237,6 @@ Platypus p2 = new Platypus();
   
 
    <script type="text/javascript" src="/js/src/love.js"></script>
-</body>
-</html>
---></div></footer></div></body></html>
+
+
+--><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>

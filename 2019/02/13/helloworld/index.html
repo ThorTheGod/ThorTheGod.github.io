@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -327,7 +319,7 @@
           <span class="post-time">
             
               <span class="post-updated">
-                &nbsp; | &nbsp; 更新于
+                  |   更新于
                  <time itemprop="dateUpdated" datetime="2019-02-14T13:44:47+08:00" content="2019-02-14">
                   2019-02-14
                 </time>
@@ -388,7 +380,7 @@
       
 
       
-        <p>这篇文章是你好师姐<br>雷猴</p>
+        <meta name="generator" content="Hexo 3.8.0"><p>这篇文章是你好师姐<br>雷猴</p>
 
       
     </div>
@@ -618,7 +610,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">© <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -636,17 +628,45 @@
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>--!>
+<!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>-->
 
 
 
- <!-- <span class="post-meta-divider">|</span>--!>
+ <!-- <span class="post-meta-divider">|</span>-->
 
 
 
-<!--  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini--!></div>--!>
+  <!--<div class="theme-info">主题 &mdash; --><!--<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini-->
+<span>　<i class="fa fa-bomb"></i></span>
+<span id="showDays"></span></div>
 
 
+
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2019,2,13,13,30,00); // 这里设置建站时间
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML="本站已运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }, 1000);
+</script>
 
         
 
@@ -657,8 +677,8 @@
 
 
         
-      </div>
-    </footer>
+      </footer></div>
+    
 
     
       <div class="back-to-top">
@@ -669,7 +689,7 @@
 
     
 
-  </div>
+  
 
   
 
@@ -1142,6 +1162,6 @@
   
 
    <script type="text/javascript" src="/js/src/love.js"></script>
-</body>
-</html>
---></div></footer></div></body></html>
+
+
+--><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
