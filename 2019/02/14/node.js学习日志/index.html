@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="node,">
+  <meta name="keywords" content="非教学,node,">
 
 
 
@@ -80,20 +80,20 @@
 
 
 
-<meta name="description" content="#写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。">
-<meta name="keywords" content="node">
+<meta name="description" content="写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。">
+<meta name="keywords" content="非教学,node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node杂笔记">
 <meta property="og:url" content="http://yoursite.com/2019/02/14/node.js学习日志/index.html">
 <meta property="og:site_name" content="多洛的黑猫">
-<meta property="og:description" content="#写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。">
+<meta property="og:description" content="写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20181014225706504?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-02-26T11:13:53.930Z">
+<meta property="og:updated_time" content="2019-02-26T11:44:52.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node杂笔记">
-<meta name="twitter:description" content="#写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。">
+<meta name="twitter:description" content="写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
@@ -323,7 +323,7 @@
             
               <span class="post-updated">
                   |   更新于
-                 <time itemprop="dateUpdated" datetime="2019-02-26T19:13:53+08:00" content="2019-02-26">
+                 <time itemprop="dateUpdated" datetime="2019-02-26T19:44:52+08:00" content="2019-02-26">
                   2019-02-26
                 </time>
               </span>
@@ -345,6 +345,39 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/nodenote/" itemprop="url" rel="index">
+                    <span itemprop="name">nodenote</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -383,8 +416,8 @@
       
 
       
-        <meta name="generator" content="Hexo 3.8.0"><p>#写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。<br><a id="more"></a></p>
-<h2 id="node-js的三个特点："><a href="#node-js的三个特点：" class="headerlink" title="node.js的三个特点："></a>node.js的三个特点：</h2><p>1.单线程：<br>在java，PHP或net等服务器端语言中会<strong>为每一个客户端链接创建见一个新的线程</strong>，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。<br>而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，其他请求放入事件站循环，当当前请求需要数据库时会被放入事件站中，即：<img src="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>i/o读数据库，这个过程中node.js可以处理下一个请求，直到i/o返回值，继续进行前请求。<br>使操作系统完全不再有线程创建·销毁的事件开销<br>能使cpu利用率百分之百<br>一个用户线程的崩溃将导致所有用户线程崩溃。<br>2.非阻塞i/o：<br>传统的线程处理机制中，执行了i/o访问数据库代码后，整个线程都讲停下来等待数据库返回值，随后进行下一步代码。即这种机制下的i/o阻塞了程序的执行。而node.js在执行访问数据库时会立即执行后面的代码<br>如：<br>fs.readfile(“text1”,function(){</p>
+        <meta name="generator" content="Hexo 3.8.0"><p>写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。<br><a id="more"></a></p>
+<h2 id="node-js的三个特点："><a href="#node-js的三个特点：" class="headerlink" title="node.js的三个特点："></a>node.js的三个特点：</h2><p>1.单线程：<br>在java，PHP或net等服务器端语言中会<strong>为每一个客户端链接创建见一个新的线程</strong>，每个线程耗费大约2mb内存——即8gb内存服务器可以同时连接最多4000个用户（故需要增加服务器数量）。<br>而node.js仅使用一个线程（不健壮，但约20mb）。当用户连接会触发内部事件，通过非阻塞和事件驱动机制让js宏观上并行。8gb内存——40000用户。当前请求（计算）暂停，其他请求放入事件站循环，当当前请求需要数据库时会被放入事件站中，即：<img src="https://img-blog.csdn.net/20181014221855147?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="单线程"><br>i/o读数据库，这个过程中node.js可以处理下一个请求，直到i/o返回值，继续进行前请求。<br>使操作系统完全不再有线程创建·销毁的事件开销<br>能使cpu利用率百分之百<br>一个用户线程的崩溃将导致所有用户线程崩溃。<br>2.非阻塞i/o：<br>传统的线程处理机制中，执行了i/o访问数据库代码后，整个线程都讲停下来等待数据库返回值，随后进行下一步代码。即这种机制下的i/o阻塞了程序的执行。而node.js在执行访问数据库时会立即执行后面的代码<br>如：<br>fs.readfile(“text1”,function(){</p>
 <p>}<br>    a++;<br>其中a++语句不会被访问数据库代码阻塞运行。<br>机制：线程的事件循环不断检查是否有未处理的事件并依次处理。完成事件的调动。<br>3.事件驱动：<br>客户端请求连接，提交数据等行为会触发相应的事件（node中同一时刻一个线程只能执行一个回调函数，中途可以处理其他事件——事件环）<img src="https://img-blog.csdn.net/20181014225706504?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTY1MTA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>*node适合有大量并发i/o但响应前不需要复杂计算的程序（擅长i/o即任务调动单不擅长计算）</p>
 <p>node不适合需要极高可靠性的业务。（是一种小工具但不健壮）</p>
 <h2 id="我的第一次node代码"><a href="#我的第一次node代码" class="headerlink" title="我的第一次node代码"></a>我的第一次node代码</h2><pre><code>var http=require("http");
@@ -443,6 +476,8 @@ const wss = new WebSocketServer({
       
         <div class="post-tags">
           
+            <a href="/tags/非教学/" <i="" class="fa fa-tag"> 非教学</a>
+          
             <a href="/tags/node/" <i="" class="fa fa-tag"> node</a>
           
         </div>
@@ -465,6 +500,10 @@ const wss = new WebSocketServer({
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/26/hexo设计/" rel="prev" title="hexo博客设计">
+                hexo博客设计 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -550,22 +589,31 @@ const wss = new WebSocketServer({
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">4</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -612,6 +660,10 @@ const wss = new WebSocketServer({
               </div>
               <ul class="links-of-blogroll-list">
                 
+                
+                  <li>
+                    <a href="/2019/02/26/hexo设计/" title="hexo博客设计" target="_blank">hexo博客设计</a>
+                  </li>
                 
                   <li>
                     <a href="/2019/02/14/node.js学习日志/" title="node杂笔记" target="_blank">node杂笔记</a>
