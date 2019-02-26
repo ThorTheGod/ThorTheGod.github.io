@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[web前端杂笔]]></title>
     <url>%2F2019%2F02%2F14%2Fhtml%EF%BC%8Ccss%E5%92%8Cjs%E5%AD%A6%E4%B9%A0%E9%87%8D%E8%A6%81%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
-    <content type="text"><![CDATA[消除列表原点： list-style：none||list-style-type：none 消除链接下划线：text-decoration：none（应用于 ） 对元素设置display：block使其变成块元素，如：a{display:block;}可以把a相应的链接方式变成块状点击。 text-align是将文本中央对齐于块中 语义部分：(1). strong 是标明重点内容， 有语气加强的含义， 使用阅读设备阅读网络时会重读， 而是展示强调内容。strong 是标明重点内容， 有语气加强的含义， 使用阅读设备阅读网络时会重读， 而是展示强调内容。i 内容展示为斜体， em 表示强调的文本；(2).自然样式标签b, i, u, s, pre语义样式标签strong, em, ins, del, code**(3).]]></content>
+    <content type="text"><![CDATA[#写在前面：由于所学不精，不够系统，笔记只记了感觉容易遗忘的知识点。仅供参考。 消除列表原点： list-style：none||list-style-type：none 消除链接下划线：text-decoration：none（应用于 ） 对元素设置display：block使其变成块元素，如：a{display:block;}可以把a相应的链接方式变成块状点击。 text-align是将文本中央对齐于块中 语义部分：(1). strong 是标明重点内容， 有语气加强的含义， 使用阅读设备阅读网络时会重读， 而是展示强调内容。strong 是标明重点内容， 有语气加强的含义， 使用阅读设备阅读网络时会重读， 而是展示强调内容。i 内容展示为斜体， em 表示强调的文本；(2).自然样式标签b, i, u, s, pre语义样式标签strong, em, ins, del, code**(3).]]></content>
       <tags>
         <tag>web前端</tag>
       </tags>
