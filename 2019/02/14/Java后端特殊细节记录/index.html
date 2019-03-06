@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="java,非教学,">
+  <meta name="keywords" content="非教学,java,">
 
 
 
@@ -81,14 +81,14 @@
 
 
 <meta name="description" content="写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。">
-<meta name="keywords" content="java,非教学">
+<meta name="keywords" content="非教学,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java笔记综合">
 <meta property="og:url" content="http://yoursite.com/2019/02/14/Java后端特殊细节记录/index.html">
 <meta property="og:site_name" content="多洛的黑猫">
 <meta property="og:description" content="写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T06:46:32.968Z">
+<meta property="og:updated_time" content="2019-03-06T10:17:00.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记综合">
 <meta name="twitter:description" content="写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。">
@@ -320,8 +320,8 @@
             
               <span class="post-updated">
                   |   更新于
-                 <time itemprop="dateUpdated" datetime="2019-03-05T14:46:32+08:00" content="2019-03-05">
-                  2019-03-05
+                 <time itemprop="dateUpdated" datetime="2019-03-06T18:17:00+08:00" content="2019-03-06">
+                  2019-03-06
                 </time>
               </span>
             
@@ -416,41 +416,38 @@
         <meta name="generator" content="Hexo 3.8.0"><p>写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。</p>
 <a id="more"></a>
 <p>##Java细节</p>
-<ol>
-<li><p>##java的实例变量和局部变量：  ##</p>
-<p> 实例变量含义：定义在类中但在任何方法之外。（New出来的均有初始化）</p>
-<p> 与局部变量的异同：(局部变量：定义在方法之中的变量）</p>
-<ol>
-<li><p>局部变量要先赋值，再进行运算，而实例变量均已经赋初值。</p>
-</li>
-<li><p>实例变量的对象赋初值为null。</p>
-</li>
-<li><p>局部变量不允许范围内定义两个同名变量。实例变量的作用域在本类中完全有效，当被其他的类调用的时候也可能有效。</p>
-</li>
-<li><p>实例变量和局部变量都允许命名冲突。代码实例：</p>
-<pre><code>public class Sample{
+<p>##1. java的实例变量和局部变量：  ##</p>
+<pre><code>实例变量含义：定义在类中但在任何方法之外。（New出来的均有初始化）
 
-    private int a=1; //实例变量
+与局部变量的异同：(局部变量：定义在方法之中的变量）
 
-    public void b(){
+1. 局部变量要先赋值，再进行运算，而实例变量均已经赋初值。
 
-        int a=2; //局部变量
+2. 实例变量的对象赋初值为null。
 
-        System.out.println("局部变量:a="+a);
+3. 局部变量不允许范围内定义两个同名变量。实例变量的作用域在本类中完全有效，当被其他的类调用的时候也可能有效。
 
-        System.out.println("实例变量:a="+this.a);
-    //局部变量的作用域内引用实例变量方法:this.变量名
-    }
+4. 实例变量和局部变量都允许命名冲突。代码实例：
 
-    public static void main(String[] args){
-        new Sample().b();
-    }
-}
-</code></pre></li>
-</ol>
-</li>
-</ol>
-<hr>
+        public class Sample{
+
+            private int a=1; //实例变量
+
+            public void b(){
+
+                int a=2; //局部变量
+
+                System.out.println("局部变量:a="+a);
+
+                System.out.println("实例变量:a="+this.a);
+            //局部变量的作用域内引用实例变量方法:this.变量名
+            }
+
+            public static void main(String[] args){
+                new Sample().b();
+            }
+        }
+</code></pre><hr>
 <h2 id="2-构造器："><a href="#2-构造器：" class="headerlink" title="2. 构造器："></a>2. 构造器：</h2><p>构造器就是<strong>和类名相同</strong>但<strong>无返回类型</strong>的方法。创建构造器就是构建特定方法。而构造器最大的用处就是<em>在创建对象时执行初始化</em>。每当创建一个对象时，系统会为这个对象的实例进行默认的初始化。如果想改变这种默认的初始化，就可以通过自定义构造器来实现。<br>比如 </p>
 <pre><code>class A
  {
@@ -527,7 +524,8 @@ class A
 </li>
 </ol>
 <hr>
-<h2 id="做后端时遇到的细节："><a href="#做后端时遇到的细节：" class="headerlink" title="做后端时遇到的细节："></a>做后端时遇到的细节：</h2><ol>
+<p>##3 做后端时遇到的细节： ##</p>
+<ol>
 <li><p>@的用法</p>
 <p> 语法: @关键字(值) </p>
 <p> @用于把关键字和值传递给编译器，更精确低控制编译器的动作。<br> 关键字都是随技术、框架、编译器的不同而不同，含义也不同、数量不定。可以由子技术或开发者扩充。<br> 比如:</p>
@@ -576,6 +574,7 @@ public class HelloServlet extends HttpServlet {
 response.setContentType("text/html;charset=utf-8");
 </code></pre></li>
 <li><p>JDBC连接数据库的步骤：</p>
+<p> 前提条件：java项目中已加入mysql-connection的jar包</p>
 <ol>
 <li><p>加载数据库驱动到JVM（JAVA VIRTUAL MACHINE)</p>
 <pre><code>try{   //加载MySql的驱动类   
@@ -592,15 +591,19 @@ response.setContentType("text/html;charset=utf-8");
 <p> 书写形式：协议：子协议：数据源标识<br> 协议：在JDBC中总是以jdbc开始<br> 子协议：是桥连接的驱动程序或是数据库管理系统名称。<br> 数据源标识：标记找到数据库来源的地址与连接端口。<br> 例如：（MySql的连接URL）</p>
 <pre><code>//可以有这么长！
 jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=gbk; 
-</code></pre><p> 这段url表示以本地3306端口连接mysql中的test数据库（假设mysql中已经创建test数据库）。</p>
-<p> 其后还可以添加：</p>
+</code></pre><p> “？”前的这段url表示以本地3306端口连接mysql中的test数据库（假设mysql中已经创建test数据库）。</p>
+<p> 数据库名后面可以添加：</p>
 <pre><code>   useUnicode=true            //表示使用Unicode字符集。
 characterEncoding=gbk    //字符编码方式。 
 serverTimezone=GMT%2B8  //设置时区。可以用于解决时区报错
-//简单项目用下面这钟就完事了
-jdbc:mysql://localhost:3306/test; 
+//简单练习用下面的就完事了。
+jdbc:mysql://localhost:3306/test;
+//or
+jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8; 
 </code></pre><p> 注意：</p>
-<p> 如果java报错：The server time zone value ‘ÖÐ¹ú±ê×¼Ê±¼ä’ is unrecognized or represents more than one time zone，就应该将时区设置加入url中，或者在命令行直接改变所用数据库的时区等，以mysql为例详见<a href="https://www.jb51.net/article/84198.htm" target="_blank" rel="noopener">https://www.jb51.net/article/84198.htm</a></p>
+<p> 如果java报错：The server time zone value ‘ÖÐ¹ú±ê×¼Ê±¼ä’ is unrecognized or represents more than one time zone等相关的时区报错，就应该将时区设置加入url中或者在命令行直接改变所用数据库的时区等（以mysql为例）详见<a href="https://www.jb51.net/article/84198.htm" target="_blank" rel="noopener">https://www.jb51.net/article/84198.htm</a></p>
+<p> 建议：</p>
+<p> 自觉在数据库名称后带上serverTimezone=GMT%2B8，因为最新版mysql-connection-java.jar（目前2019年）对时区有超级严格的要求。加上也反正不会掉肉。若是找bug找到崩溃最后才发现只是因为小小的url，你可能会砍人（别问我经历了什么）。</p>
 </li>
 <li><p>将第二步的信息传递给JDBC创建连接</p>
 <p> 要连接数据库，首先需要向java.sql.DriverManager请求并获得Connection对象，该对象代表一个数据库的连接。<br> 使用这个</p>
@@ -669,7 +672,21 @@ try{
 </ol>
 </li>
 </ol>
-<p>7. </p>
+<ol start="7">
+<li><p>使用 request.getRequestDispatcher();方法时产生的乱码问题</p>
+<p> 做IDEA+servlet+mysql的登录注册任务过程中，使用了代码</p>
+<pre><code>request.getRequestDispatcher("welcome.html").forward(request, response);
+</code></pre><p> 以实现跳转到welcome界面。但跳转以后，页面上出现了中文乱码现象。我使用的编码代码是：</p>
+<pre><code>request.setCharacterEncoding("utf8");
+response.setCharacterEncoding("utf-8");
+</code></pre><p> 且html是默认的utf-8解码格式，是与servlet上的对应的。<br> 最后在welcome.html 文件的head中更改meta为</p>
+<pre><code><meta charset="gb2312">
+</code></pre><p> 即将原来默认的utf-8改成了gb2312，结果乱码问题解决。</p>
+<p> 网上查原因了解到，GB2312是简体中文编码，当文章/网页中包含繁体中文、日文、韩文时，这些内容可能无法被gb2312正确编码。</p>
+<p> UTF-8编码是一种目前广泛应用于网页的编码，它其实是一种Unicode编码，致力于把全球所有语言纳入一个统一的编码。UTF-8已经把几种重要的亚洲语言纳入，包括简繁中文和日韩文字。</p>
+<p> 那么为什么两边都用了utf-8却仍然中文乱码呢？我还没找到原因，但猜测是与这个案例相似的情况：<a href="http://www.cnblogs.com/csn0721/archive/2013/01/24/2875613.html" target="_blank" rel="noopener">http://www.cnblogs.com/csn0721/archive/2013/01/24/2875613.html</a>。即在代码执行过程中utf-8的数据可能被转成了其他编码，此时再把数据传给用utf-8解析的网页自然是会乱码的。</p>
+</li>
+</ol>
 
       
     </div>
@@ -698,9 +715,9 @@ try{
       
         <div class="post-tags">
           
-            <a href="/tags/java/" <i="" class="fa fa-tag"> java</a>
-          
             <a href="/tags/非教学/" <i="" class="fa fa-tag"> 非教学</a>
+          
+            <a href="/tags/java/" <i="" class="fa fa-tag"> java</a>
           
         </div>
       
@@ -922,7 +939,7 @@ try{
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-构造器："><span class="nav-number">1.</span> <span class="nav-text">2. 构造器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#做后端时遇到的细节："><span class="nav-number">2.</span> <span class="nav-text">做后端时遇到的细节：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-构造器："><span class="nav-number">1.</span> <span class="nav-text">2. 构造器：</span></a></li></ol></div>
             
 
           </div>
