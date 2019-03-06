@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="多洛的黑猫">
 <meta property="og:description" content="写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-06T10:17:00.257Z">
+<meta property="og:updated_time" content="2019-03-06T14:49:11.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java笔记综合">
 <meta name="twitter:description" content="写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。">
@@ -320,7 +320,7 @@
             
               <span class="post-updated">
                   |   更新于
-                 <time itemprop="dateUpdated" datetime="2019-03-06T18:17:00+08:00" content="2019-03-06">
+                 <time itemprop="dateUpdated" datetime="2019-03-06T22:49:11+08:00" content="2019-03-06">
                   2019-03-06
                 </time>
               </span>
@@ -415,39 +415,38 @@
       
         <meta name="generator" content="Hexo 3.8.0"><p>写在前面：由于在下所学不精，不够系统，此笔记只记了感觉容易遗忘或特殊的知识点，可作为复习查漏用，切不可用于系统学习。仅供参考。</p>
 <a id="more"></a>
-<p>##Java细节</p>
-<p>##1. java的实例变量和局部变量：  ##</p>
-<pre><code>实例变量含义：定义在类中但在任何方法之外。（New出来的均有初始化）
+<p>#Java细节</p>
+<p>##1. java的实例变量和局部变量：<br>实例变量含义：定义在类中但在任何方法之外。（New出来的均有初始化）</p>
+<p>与局部变量的异同：(局部变量：定义在方法之中的变量）</p>
+<ol>
+<li><p>局部变量要先赋值，再进行运算，而实例变量均已经赋初值。</p>
+</li>
+<li><p>实例变量的对象赋初值为null。</p>
+</li>
+<li><p>局部变量不允许范围内定义两个同名变量。实例变量的作用域在本类中完全有效，当被其他的类调用的时候也可能有效。</p>
+</li>
+<li><p>实例变量和局部变量都允许命名冲突。代码实例：</p>
+<pre><code>public class Sample{
 
-与局部变量的异同：(局部变量：定义在方法之中的变量）
+    private int a=1; //实例变量
 
-1. 局部变量要先赋值，再进行运算，而实例变量均已经赋初值。
+    public void b(){
 
-2. 实例变量的对象赋初值为null。
+        int a=2; //局部变量
 
-3. 局部变量不允许范围内定义两个同名变量。实例变量的作用域在本类中完全有效，当被其他的类调用的时候也可能有效。
+        System.out.println("局部变量:a="+a);
 
-4. 实例变量和局部变量都允许命名冲突。代码实例：
+        System.out.println("实例变量:a="+this.a);
+    //局部变量的作用域内引用实例变量方法:this.变量名
+    }
 
-        public class Sample{
-
-            private int a=1; //实例变量
-
-            public void b(){
-
-                int a=2; //局部变量
-
-                System.out.println("局部变量:a="+a);
-
-                System.out.println("实例变量:a="+this.a);
-            //局部变量的作用域内引用实例变量方法:this.变量名
-            }
-
-            public static void main(String[] args){
-                new Sample().b();
-            }
-        }
-</code></pre><hr>
+    public static void main(String[] args){
+        new Sample().b();
+    }
+}
+</code></pre></li>
+</ol>
+<hr>
 <h2 id="2-构造器："><a href="#2-构造器：" class="headerlink" title="2. 构造器："></a>2. 构造器：</h2><p>构造器就是<strong>和类名相同</strong>但<strong>无返回类型</strong>的方法。创建构造器就是构建特定方法。而构造器最大的用处就是<em>在创建对象时执行初始化</em>。每当创建一个对象时，系统会为这个对象的实例进行默认的初始化。如果想改变这种默认的初始化，就可以通过自定义构造器来实现。<br>比如 </p>
 <pre><code>class A
  {
@@ -570,7 +569,7 @@ public class HelloServlet extends HttpServlet {
 </li>
 <li><p>前后端乱码问题</p>
 <p> 由于浏览器，控制台和IDE对字符的转码格式不一定相同，当需要接受或传送字符时，我们需要设置相应的request和response属性，且这种设置要早于其他调用，如要在response.getWriter方法前设置好转码格式，从而避免乱码。<br> 目前我在用的好用的调整转码格式代码:</p>
-<pre><code>request.setCharacterEncoding("utf8");
+<pre><code>request.setCharacterEncoding("utf-8");
 response.setContentType("text/html;charset=utf-8");
 </code></pre></li>
 <li><p>JDBC连接数据库的步骤：</p>
@@ -677,17 +676,77 @@ try{
 <p> 做IDEA+servlet+mysql的登录注册任务过程中，使用了代码</p>
 <pre><code>request.getRequestDispatcher("welcome.html").forward(request, response);
 </code></pre><p> 以实现跳转到welcome界面。但跳转以后，页面上出现了中文乱码现象。我使用的编码代码是：</p>
-<pre><code>request.setCharacterEncoding("utf8");
-response.setCharacterEncoding("utf-8");
+<pre><code>request.setCharacterEncoding("utf8");//应该是utf-8
+response.setContentType("text/html;charset=utf-8");
 </code></pre><p> 且html是默认的utf-8解码格式，是与servlet上的对应的。<br> 最后在welcome.html 文件的head中更改meta为</p>
 <pre><code><meta charset="gb2312">
 </code></pre><p> 即将原来默认的utf-8改成了gb2312，结果乱码问题解决。</p>
 <p> 网上查原因了解到，GB2312是简体中文编码，当文章/网页中包含繁体中文、日文、韩文时，这些内容可能无法被gb2312正确编码。</p>
 <p> UTF-8编码是一种目前广泛应用于网页的编码，它其实是一种Unicode编码，致力于把全球所有语言纳入一个统一的编码。UTF-8已经把几种重要的亚洲语言纳入，包括简繁中文和日韩文字。</p>
 <p> 那么为什么两边都用了utf-8却仍然中文乱码呢？我还没找到原因，但猜测是与这个案例相似的情况：<a href="http://www.cnblogs.com/csn0721/archive/2013/01/24/2875613.html" target="_blank" rel="noopener">http://www.cnblogs.com/csn0721/archive/2013/01/24/2875613.html</a>。即在代码执行过程中utf-8的数据可能被转成了其他编码，此时再把数据传给用utf-8解析的网页自然是会乱码的。</p>
+<blockquote>
+<p>此处更新于2019.03.06.17</p>
+</blockquote>
+<pre><code>request.setCharacterEncoding("utf-8");
+response.setContentType("text/html;charset=utf-8");
+</code></pre><p> <strong>白说了这么多</strong>，参考java细节的第五点代码就可以完美解决。之前出现bug的原因应该是第五点代码写成了utf8（现在已经修正），页面已经没有乱码现象。千万注意格式和解码统一！</p>
+</li>
+<li><p>servlet中的forward和include的区别</p>
+<p> 某次写跳转代码时注意到了这两个功能存在有差异：</p>
+<pre><code>request.getRequestDispatcher("reg.jsp").forward(request, response);
+request.getRequestDispatcher("reg.jsp").include(request, response);
+</code></pre><p> forward方法是把<strong>请求的内容转发</strong>到另外的一个servlet；而include是把上一个servlet<strong>处理过后的内容</strong>拿过来。<br> 举例来说：</p>
+<p> 比如在servlet1打一句out.print(“1111”);,servlet2打上out.print(“22222”);</p>
+<p> 若在servlet1中用forward命令，将会<strong>转到servlet2中</strong>,显示22222.</p>
+<p> 而若在servlet1中使用include方法会<strong>依然在servlet1的页面中</strong>,但是在1111后打出22222</p>
+</li>
+<li><p>response.getWriter().write()与out.print()的区别</p>
+<p> 两者都能在页面上显示参数内的东西。</p>
+<ol>
+<li><p>write()：仅支持输出字符类型数据，字符、字符数组、字符串等.</p>
+</li>
+<li><p>print()：可以将各种类型（包括Object对象）的数据通过默认编码转换成bytes字节形式.</p>
 </li>
 </ol>
+</li>
+<li><p>execute、executeUpdate、executeQuery三者的区别（及返回值)</p>
+<ol>
+<li><p>ResultSet executeQuery(String sql);只能执行SQL查询，并<strong>返回ResultSet对象</strong>。常用ResultSet的next()方法返回0（失败）和1（成功）来作为运行状态的判断依据。</p>
+<ol start="2">
+<li><p>int executeUpdate(String sql);可执行增，删，改，返回值为<strong>更新的行数</strong>。</p>
+</li>
+<li><p>boolean execute(String sql);可执行<strong>任何SQL</strong>语句。<strong>返回一个布尔值，表示是否返回ResultSet</strong> 。</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>## executeUpdate加深理解： ##
 
+executeUpdate()是 PreparedStatement 接口中的方法
+executeUpdate(String sql)是 PreparedStatement 从父接口 Statement 中继承过来的方法。
+
+executeUpdate()中执行 SQL 语句需要在创建 PerparedStatement 时通过 Connection 的 prepareStatement(String sql) 方法中写出，因为 **PerparedStatement 中的 SQL 语句数据库需要进行预编译和缓存**，因此要在创建 PerparedStatement 对象时给出 SQL 语句。
+
+statement 接口中有executeUpdate(String sql)方法发送sql 并返回执行成功的记录的条数 int；
+
+而prepareStatement是statement的子接口，它自己定义了方法executeUpdate()，用于执行已发送的预编译的sql，并返回执行成功的记录的条数int。
+
+一般常用prepareStatement 有预编译功能可以防止sql注入攻击。
+
+executeUpdate(String sql) 是 Statement 中的方法，参数中的 SQL 语句只是提交给数据库去执行，并**不需要预编译**。
+</code></pre><ol start="11">
+<li><p>PrintWriter对象时的flush()和close()方法</p>
+<p>若使用了printwriter的write（）和print（）方法，则应该在最后加上下面的代码释放缓冲：</p>
+<pre><code>flush();//能将缓冲区的数据强制输出，清空缓冲区，若不flush而直接调用close，可能会丢失缓冲区的数据。通俗来讲它是刷新的作用。
+close();//关闭数据流
+</code></pre></li>
+</ol>
+<p>12.内容为链接的字符串自动补全了两个\的困惑</p>
+<pre><code>String url = "<a href="\" index.jsp\""="">点击此处直接跳转登录</a>";
+out.write(url);
+</code></pre>
       
     </div>
     
